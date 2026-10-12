@@ -9,6 +9,7 @@ import matplotlib.pyplot as plt
 def train_model(model, train_loader, val_loader, epochs=10, device='cuda'):
     criterion = nn.CrossEntropyLoss()
     optimizer = optim.Adam(model.parameters(), lr=0.001)
+    #optimizer = optim.SGD(model.parameters(), lr=0.01, momentum=0.9)
 
     train_losses, val_losses= [], []
     train_accuracies, val_accuracies=[], []
