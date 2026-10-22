@@ -43,12 +43,18 @@ Model, CUDA donanım hızlandırması kullanılarak eğitilmiştir.
 * **Epoch Sayısı:** 10 (veya 25)
 
 ### Eğitim Sonuçları ve Başarı Metrikleri (Temel Model)
-Orijinal modelimiz (Deney 1), verileri ezberlemek (overfitting) yerine başarılı bir genelleme (generalization) sağlamıştır:
-- **Train Accuracy:** ~%97.00
-- **Validation Accuracy:** ~%96.50
+Orijinal modelimiz (Deney 1), 218.45 saniyelik eğitim süresi sonunda verileri ezberlemek (overfitting) yerine başarılı bir genelleme (generalization) sağlamıştır:
+
+- **Training Loss:** ~0.1700
+- **Validation Loss:** ~0.1800
+- **Training Accuracy:** ~%94.80
+- **Validation Accuracy:** ~%94.40
 - **Test Accuracy:** %96.12
 
-*(Not: Eğitim sürecindeki stabil Loss ve Accuracy düşüş/yükseliş grafikleri proje dizinindeki `graph_results/metrics_grafigi2katmanli.png` dosyasında yer almaktadır.)*
+**Eğitim Süreci Loss ve Accuracy Grafiği:**
+Aşağıdaki grafik, temel modelin eğitim ve doğrulama setlerindeki öğrenme performansını göstermektedir:
+
+![Temel Model Eğitim Grafiği](graph_results/metrics_grafigi2katmanli.png)
 ## 5. Gerçek Dünya Verisi ve Distribution Shift Analizi
 
 Ödevin en kritik çıktısı olan "Training data ile gerçek dünya verisi arasındaki farkı gözlemleme" adımı başarıyla uygulanmıştır. Öğrenci numaramı oluşturan rakamlar beyaz kağıda yazılarak teker teker fotoğraflanmış ve kırpılmıştır.
