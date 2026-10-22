@@ -50,7 +50,7 @@ Model, verileri ezberlemek yerine başarılı bir genelleme (generalization) sa�
 * **Validation Accuracy:** ~%95.0
 * **Test Accuracy:** ~%95.0
 
-*(Not: Eğitim sürecindeki stabil Loss ve Accuracy düşüş/yükseliş grafikleri proje dizinindeki `grafik_orijinal.png` dosyasında yer almaktadır.)*
+*(Not: Eğitim sürecindeki stabil Loss ve Accuracy düşüş/yükseliş grafikleri proje dizinindeki `metrics_grafigi2katmanli.png` dosyasında yer almaktadır.)*
 
 ## 5. Gerçek Dünya Verisi ve Distribution Shift Analizi
 
@@ -78,7 +78,7 @@ Bu uçurumu kapatmak için OpenCV kütüphanesi ile bir boru hattı (pipeline) k
 | **Deney 2 (Derin Mimari)** | 3 Gizli Katman (256 -> 128 -> 64)| Adam | 0.001 | 214.37 sn | %94.82 |
 | **Deney 3 (Fark. Optimizer)**| 2 Gizli Katman (256 -> 128) | SGD (Momentum: 0.9)| 0.01 | 208.65 sn | %95.71 |
 
-*(Not: Geliştirme sürecine ait doğruluk ve kayıp grafikleri - `grafik_orijinal.png`, `grafik_3katman.png`, `grafik_sgd.png` - proje dizininde yer almaktadır.)*
+*(Not: Geliştirme sürecine ait doğruluk ve kayıp grafikleri - `metrics_grafigi2katmanli.png`, `metrics_grafigi3katmanli.png`, `metrics_grafigiSGD.png` - proje dizininde yer almaktadır.)*
 
 ### Sonuç Analizi ve Mühendislik Değerlendirmesi
 
