@@ -71,6 +71,28 @@ Bu uçurumu kapatmak için OpenCV kütüphanesi ile bir boru hattı (pipeline) k
 
 **Sonuç:** Rakamları tek tek işleyip modele gönderdiğimizde, model yüksek bir doğrulukla rakamları tahmin etmeyi başardı. Bu sayede sadece bir model eğitmeyi değil, gerçek dünya verisini modele uygun hale getirecek mühendislik sürecini de kavramış oldum.
 
+### Model Tahmin Örneği (Gerçek Dünya Verisi)
+
+Aşağıda, kendi el yazımla oluşturduğum öğrenci numarama ait bir rakamın modele verilmeden önceki işlem adımları ve modelin nihai tahmini yer almaktadır:
+
+1. **Orijinal Görüntü (Kağıt Üzerinde):**
+![Orijinal Rakam](custom_images/okul_no.jpeg) 
+
+2. **OpenCV Ön İşleme (MNIST Formatına Dönüştürülmüş):**
+![İşlenmiş Rakam](custom_images/analiz_okul_no2katmanli.jpeg)
+
+- **Gerçek Değer:** 24120205013
+- **Modelin Tahminleri:** 2, 4, 1, 2, 0, 2, 0, 5, 0, 1, 3 (Tüm rakamlar başarılı)
+- **Sonuç:** OpenCV ile uygulanan Bounding Box (sınır kutusu) algoritması tüm rakamları eksiksiz tespit etmiş ve MLP modelimiz dizideki her bir rakamı doğru sınıflandırarak gerçek dünya verisi üzerinde tam başarı sağlamıştır.
+
+### Karşılaştırmalı Deney Grafikleri
+
+**Deney 2 (3 Gizli Katmanlı Mimari):**
+![3 Katmanlı Mimari Grafiği](graph_results/metrics_grafigi3katmanli.png)
+
+**Deney 3 (SGD Optimizer - Momentum 0.9):**
+![SGD Optimizer Grafiği](graph_results/metrics_grafigiSGD.png)
+
 ## 6. 📊 Hiperparametre ve Mimari Karşılaştırma Deneyleri
 
 Ödev yönergeleri doğrultusunda, modelin farklı hiperparametreler ve mimariler altındaki performansını (Distribution/Generalization) ölçmek için 3 farklı deney gerçekleştirilmiştir. Tüm eğitim süreçleri CUDA donanım hızlandırması ile 10 Epoch üzerinden test edilmiştir.
